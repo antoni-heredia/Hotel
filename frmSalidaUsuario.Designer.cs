@@ -36,6 +36,7 @@ namespace Hotel
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSalidaUsuario));
 			this.lblConfirmacion = new System.Windows.Forms.Label();
 			this.dtpEntrada = new System.Windows.Forms.DateTimePicker();
 			this.dtpSalida = new System.Windows.Forms.DateTimePicker();
@@ -65,6 +66,7 @@ namespace Hotel
 			// 
 			// lblConfirmacion
 			// 
+			this.lblConfirmacion.BackColor = System.Drawing.Color.Transparent;
 			this.lblConfirmacion.Font = new System.Drawing.Font("Stencil Std", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblConfirmacion.Location = new System.Drawing.Point(12, 9);
 			this.lblConfirmacion.Name = "lblConfirmacion";
@@ -89,6 +91,7 @@ namespace Hotel
 			// 
 			// lblEntrada
 			// 
+			this.lblEntrada.BackColor = System.Drawing.Color.Transparent;
 			this.lblEntrada.Location = new System.Drawing.Point(12, 60);
 			this.lblEntrada.Name = "lblEntrada";
 			this.lblEntrada.Size = new System.Drawing.Size(100, 14);
@@ -97,6 +100,7 @@ namespace Hotel
 			// 
 			// lblSalida
 			// 
+			this.lblSalida.BackColor = System.Drawing.Color.Transparent;
 			this.lblSalida.Location = new System.Drawing.Point(12, 100);
 			this.lblSalida.Name = "lblSalida";
 			this.lblSalida.Size = new System.Drawing.Size(100, 14);
@@ -105,6 +109,7 @@ namespace Hotel
 			// 
 			// lblPrecio
 			// 
+			this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
 			this.lblPrecio.Location = new System.Drawing.Point(12, 143);
 			this.lblPrecio.Name = "lblPrecio";
 			this.lblPrecio.Size = new System.Drawing.Size(100, 20);
@@ -113,6 +118,7 @@ namespace Hotel
 			// 
 			// btnCalculadar
 			// 
+			this.btnCalculadar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCalculadar.BackgroundImage")));
 			this.btnCalculadar.Location = new System.Drawing.Point(12, 191);
 			this.btnCalculadar.Name = "btnCalculadar";
 			this.btnCalculadar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -124,6 +130,7 @@ namespace Hotel
 			// 
 			// lblNombre
 			// 
+			this.lblNombre.BackColor = System.Drawing.Color.Transparent;
 			this.lblNombre.Location = new System.Drawing.Point(288, 69);
 			this.lblNombre.Name = "lblNombre";
 			this.lblNombre.Size = new System.Drawing.Size(48, 13);
@@ -132,6 +139,7 @@ namespace Hotel
 			// 
 			// lblApellidos
 			// 
+			this.lblApellidos.BackColor = System.Drawing.Color.Transparent;
 			this.lblApellidos.Location = new System.Drawing.Point(429, 66);
 			this.lblApellidos.Name = "lblApellidos";
 			this.lblApellidos.Size = new System.Drawing.Size(52, 16);
@@ -140,6 +148,7 @@ namespace Hotel
 			// 
 			// lblDni
 			// 
+			this.lblDni.BackColor = System.Drawing.Color.Transparent;
 			this.lblDni.Location = new System.Drawing.Point(288, 100);
 			this.lblDni.Name = "lblDni";
 			this.lblDni.Size = new System.Drawing.Size(48, 14);
@@ -148,6 +157,7 @@ namespace Hotel
 			// 
 			// lblNumero
 			// 
+			this.lblNumero.BackColor = System.Drawing.Color.Transparent;
 			this.lblNumero.Location = new System.Drawing.Point(429, 100);
 			this.lblNumero.Name = "lblNumero";
 			this.lblNumero.Size = new System.Drawing.Size(79, 14);
@@ -172,6 +182,7 @@ namespace Hotel
 			// 
 			// lblTotal
 			// 
+			this.lblTotal.BackColor = System.Drawing.Color.Transparent;
 			this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTotal.Location = new System.Drawing.Point(12, 303);
 			this.lblTotal.Name = "lblTotal";
@@ -181,6 +192,7 @@ namespace Hotel
 			// 
 			// btnConfirmar
 			// 
+			this.btnConfirmar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.BackgroundImage")));
 			this.btnConfirmar.Location = new System.Drawing.Point(184, 191);
 			this.btnConfirmar.Name = "btnConfirmar";
 			this.btnConfirmar.Size = new System.Drawing.Size(80, 69);
@@ -191,6 +203,7 @@ namespace Hotel
 			// 
 			// lblTotalAPagar
 			// 
+			this.lblTotalAPagar.BackColor = System.Drawing.Color.Transparent;
 			this.lblTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTotalAPagar.Location = new System.Drawing.Point(148, 302);
 			this.lblTotalAPagar.Name = "lblTotalAPagar";
@@ -200,6 +213,7 @@ namespace Hotel
 			// 
 			// lblPrecioPorExtra
 			// 
+			this.lblPrecioPorExtra.BackColor = System.Drawing.Color.Transparent;
 			this.lblPrecioPorExtra.Location = new System.Drawing.Point(12, 163);
 			this.lblPrecioPorExtra.Name = "lblPrecioPorExtra";
 			this.lblPrecioPorExtra.Size = new System.Drawing.Size(100, 25);
@@ -208,6 +222,7 @@ namespace Hotel
 			// 
 			// lblPrecioHabitacion
 			// 
+			this.lblPrecioHabitacion.BackColor = System.Drawing.Color.Transparent;
 			this.lblPrecioHabitacion.Location = new System.Drawing.Point(119, 143);
 			this.lblPrecioHabitacion.Name = "lblPrecioHabitacion";
 			this.lblPrecioHabitacion.Size = new System.Drawing.Size(163, 20);
@@ -215,6 +230,7 @@ namespace Hotel
 			// 
 			// lblPrecioExtra
 			// 
+			this.lblPrecioExtra.BackColor = System.Drawing.Color.Transparent;
 			this.lblPrecioExtra.Location = new System.Drawing.Point(119, 163);
 			this.lblPrecioExtra.Name = "lblPrecioExtra";
 			this.lblPrecioExtra.Size = new System.Drawing.Size(163, 25);
@@ -222,16 +238,18 @@ namespace Hotel
 			// 
 			// lblFactura
 			// 
+			this.lblFactura.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lblFactura.BackgroundImage")));
 			this.lblFactura.Location = new System.Drawing.Point(98, 191);
 			this.lblFactura.Name = "lblFactura";
 			this.lblFactura.Size = new System.Drawing.Size(80, 69);
 			this.lblFactura.TabIndex = 20;
-			this.lblFactura.Text = "Generar factura HTML";
+			this.lblFactura.Text = "Crear factura PDF";
 			this.lblFactura.UseVisualStyleBackColor = true;
 			this.lblFactura.Click += new System.EventHandler(this.LblFacturaClick);
 			// 
 			// Nombre
 			// 
+			this.Nombre.BackColor = System.Drawing.Color.Transparent;
 			this.Nombre.Location = new System.Drawing.Point(343, 69);
 			this.Nombre.Name = "Nombre";
 			this.Nombre.Size = new System.Drawing.Size(80, 13);
@@ -239,6 +257,7 @@ namespace Hotel
 			// 
 			// Apellido
 			// 
+			this.Apellido.BackColor = System.Drawing.Color.Transparent;
 			this.Apellido.Location = new System.Drawing.Point(487, 66);
 			this.Apellido.Name = "Apellido";
 			this.Apellido.Size = new System.Drawing.Size(91, 16);
@@ -246,6 +265,7 @@ namespace Hotel
 			// 
 			// NumeroHabitacion
 			// 
+			this.NumeroHabitacion.BackColor = System.Drawing.Color.Transparent;
 			this.NumeroHabitacion.Location = new System.Drawing.Point(514, 100);
 			this.NumeroHabitacion.Name = "NumeroHabitacion";
 			this.NumeroHabitacion.Size = new System.Drawing.Size(64, 14);
@@ -253,6 +273,7 @@ namespace Hotel
 			// 
 			// Dni
 			// 
+			this.Dni.BackColor = System.Drawing.Color.Transparent;
 			this.Dni.Location = new System.Drawing.Point(343, 100);
 			this.Dni.Name = "Dni";
 			this.Dni.Size = new System.Drawing.Size(80, 14);
@@ -262,7 +283,8 @@ namespace Hotel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(581, 353);
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.ClientSize = new System.Drawing.Size(584, 361);
 			this.Controls.Add(this.Dni);
 			this.Controls.Add(this.NumeroHabitacion);
 			this.Controls.Add(this.Apellido);

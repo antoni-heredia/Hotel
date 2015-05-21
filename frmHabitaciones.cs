@@ -29,15 +29,20 @@ namespace Hotel
 			InitializeComponent();
 
 		}
-		public void CargarListado(string ruta){
+		void CargarListado(){
+			lvHabitaciones.Clear();
 				lvHabitaciones.View = View.Details;
 				XmlDocument doc = new XmlDocument();
 				XmlNode nodo;
-				doc.Load(ruta);
+				doc.Load(this.Tag.ToString());
 				nodo=doc.DocumentElement.SelectSingleNode("/hotel/habitaciones");
 				XmlAttributeCollection atrs ;
-				lvHabitaciones.Columns.Add("Numero de Habitacion");
-				lvHabitaciones.Columns.Add("Ocupado");
+				ColumnHeader encabezado1 = new ColumnHeader();
+				encabezado1.Text = "Numero de Habitacion";
+				lvHabitaciones.Columns.Add(encabezado1);
+				ColumnHeader encabezado2 = new ColumnHeader();
+				encabezado2.Text = "Ocupada";
+				lvHabitaciones.Columns.Add(encabezado2);
 				foreach (XmlNode  habitaciones in nodo) {
 					atrs=habitaciones.Attributes;
 					string strNumero=atrs["Numero"].Value;
@@ -50,12 +55,14 @@ namespace Hotel
 					elementoListView.Tag=strNumero;
 		           	lvHabitaciones.Items.Add(elementoListView);
 				}
+				encabezado1.Width = -2;
+				encabezado2.Width = -2;
 		}
 		
 		void FrmHabitacionesLoad(object sender, EventArgs e)
 		{
 			try{
-				this.CargarListado(this.Tag.ToString());
+				this.CargarListado();
 			}catch{
 				MessageBox.Show("No se ha selecionando nada");
 			}	
@@ -71,12 +78,17 @@ namespace Hotel
 		    	MessageBox.Show("No se ha selecionando nada");
 		    }
 		}
+		void myForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			CargarListado();
+		}
 		void LblAñadirClick(object sender, EventArgs e)
 		{
 			try{
 	      		string ocupado = lvHabitaciones.SelectedItems[0].SubItems[1].Text;
 				if ( ocupado == "No" ){
 					frmAñadir Añadir = new frmAñadir();
+					Añadir.FormClosing += new FormClosingEventHandler(myForm_FormClosing);
 					Añadir.Tag = lvHabitaciones.SelectedItems[0].Tag+"|"+this.Tag.ToString();
 					Añadir.Show();
 				}else{
@@ -96,6 +108,7 @@ namespace Hotel
 				string ocupado = lvHabitaciones.SelectedItems[0].SubItems[1].Text;
 				if ( ocupado == "Si" ){
 					frmSalidaUsuario Salida = new frmSalidaUsuario();
+					Salida.FormClosing += new FormClosingEventHandler(myForm_FormClosing);
 					Salida.Tag=lvHabitaciones.SelectedItems[0].Tag+"|"+this.Tag.ToString();
 					Salida.Show();
 				}else{

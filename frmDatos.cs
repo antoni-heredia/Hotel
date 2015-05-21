@@ -57,6 +57,7 @@ namespace Hotel
        					lvExtras.Items.Add(element.InnerText);
 					}
 				}
+				encabezado.Width = -2;
 			}
 		}
 		

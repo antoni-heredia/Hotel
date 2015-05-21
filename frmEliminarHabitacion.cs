@@ -29,16 +29,19 @@ namespace Hotel
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-		void FrmEliminarHabitacionLoad(object sender, EventArgs e)
-		{
-			
+		void CargarListado(){
+			listView1.Clear();
 			XmlDocument doc = new XmlDocument();
 			XmlNode nodo;
 			doc.Load(this.Tag.ToString());
 			nodo=doc.DocumentElement.SelectSingleNode("/hotel/habitaciones");
 			XmlAttributeCollection atrs ;
-			listView1.Columns.Add("Numero de Habitacion");
-			listView1.Columns.Add("Ocupado");
+			ColumnHeader encabezado1 = new ColumnHeader();
+			encabezado1.Text = "Numero de Habitacion";
+			listView1.Columns.Add(encabezado1);
+			ColumnHeader encabezado2 = new ColumnHeader();
+			encabezado2.Text = "Ocupada";
+			listView1.Columns.Add(encabezado2);
 			foreach (XmlNode  habitaciones in nodo) {
 				atrs=habitaciones.Attributes;
 				string strNumero=atrs["Numero"].Value;
@@ -50,41 +53,53 @@ namespace Hotel
        			elementoListView = new ListViewItem(elementosFila);
 				elementoListView.Tag=strNumero;
             	listView1.Items.Add(elementoListView);
-			}
-			
+			}	
+			encabezado1.Width = -2;
+			encabezado2.Width = -2;			
+		
+		}
+		void FrmEliminarHabitacionLoad(object sender, EventArgs e)
+		{
+			CargarListado();
 		}
 		void LblEliminarClick(object sender, EventArgs e)
 		{
+			try{
 			string strocupado = listView1.SelectedItems[0].SubItems[1].Text;
-			if ( strocupado == "No" ){
-				DialogResult dialogResult = MessageBox.Show("¿Esta seguro que quiere borras esta habitacion?", "Comfirmación", MessageBoxButtons.YesNo);
-				if(dialogResult == DialogResult.Yes)
-				{
-					XmlDocument doc = new XmlDocument();
-					doc.Load(this.Tag.ToString());
-					XmlNode nodo;
-					nodo=doc.DocumentElement.SelectSingleNode("/hotel/habitaciones");
-					XmlAttributeCollection atrs;
-					foreach ( XmlNode habitacion in nodo) {
-						atrs=habitacion.Attributes;
-						string strNumero=atrs["Numero"].Value;
-						if( strNumero ==  listView1.SelectedItems[0].SubItems[0].Text){
-							nodo.RemoveChild(habitacion);
-							XmlTextWriter escriba = new XmlTextWriter(this.Tag.ToString(), null);
-							escriba.Formatting = Formatting.Indented;
-							doc.Save(escriba);
-							escriba.Close();
-							MessageBox.Show("Se ha modificado correctamente");
+				if ( strocupado == "No" ){
+					DialogResult dialogResult = MessageBox.Show("¿Esta seguro que quiere borras esta habit" +
+				                                            "acion?", "Comfirmación", MessageBoxButtons.YesNo);
+					if(dialogResult == DialogResult.Yes)
+					{
+						XmlDocument doc = new XmlDocument();
+						doc.Load(this.Tag.ToString());
+						XmlNode nodo;
+						nodo=doc.DocumentElement.SelectSingleNode("/hotel/habitaciones");
+						XmlAttributeCollection atrs;
+						foreach ( XmlNode habitacion in nodo) {
+							atrs=habitacion.Attributes;
+							string strNumero=atrs["Numero"].Value;
+							if( strNumero ==  listView1.SelectedItems[0].SubItems[0].Text){
+								nodo.RemoveChild(habitacion);
+								XmlTextWriter escriba = new XmlTextWriter(this.Tag.ToString(), null);
+								escriba.Formatting = Formatting.Indented;
+								doc.Save(escriba);
+								escriba.Close();
+								MessageBox.Show("Se ha modificado correctamente");
+								CargarListado();
+							}
+							
 						}
-						
 					}
+					else if (dialogResult == DialogResult.No)
+					{
+						MessageBox.Show("La habitacion no se ha borrado");
+					}
+				}else{
+					MessageBox.Show("No se puede eliminar una  habitacion ocupada");
 				}
-				else if (dialogResult == DialogResult.No)
-				{
-					MessageBox.Show("La habitacion no se ha borrado");
-				}
-			}else{
-				MessageBox.Show("No se puede eliminar una  habitacion ocupada");
+			}catch{
+				MessageBox.Show("No se ha seleciondo nada");
 			}
 		}
 	}

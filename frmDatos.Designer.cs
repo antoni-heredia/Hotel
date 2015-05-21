@@ -36,6 +36,7 @@ namespace Hotel
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatos));
 			this.lblPlanta = new System.Windows.Forms.Label();
 			this.lblNumero = new System.Windows.Forms.Label();
 			this.lblOcupada = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@ namespace Hotel
 			// 
 			// lblPlanta
 			// 
+			this.lblPlanta.BackColor = System.Drawing.Color.Transparent;
 			this.lblPlanta.Location = new System.Drawing.Point(12, 69);
 			this.lblPlanta.Name = "lblPlanta";
 			this.lblPlanta.Size = new System.Drawing.Size(100, 22);
@@ -55,6 +57,7 @@ namespace Hotel
 			// 
 			// lblNumero
 			// 
+			this.lblNumero.BackColor = System.Drawing.Color.Transparent;
 			this.lblNumero.Location = new System.Drawing.Point(13, 23);
 			this.lblNumero.Name = "lblNumero";
 			this.lblNumero.Size = new System.Drawing.Size(100, 23);
@@ -63,6 +66,7 @@ namespace Hotel
 			// 
 			// lblOcupada
 			// 
+			this.lblOcupada.BackColor = System.Drawing.Color.Transparent;
 			this.lblOcupada.Location = new System.Drawing.Point(12, 46);
 			this.lblOcupada.Name = "lblOcupada";
 			this.lblOcupada.Size = new System.Drawing.Size(100, 23);
@@ -71,6 +75,7 @@ namespace Hotel
 			// 
 			// lblAforo
 			// 
+			this.lblAforo.BackColor = System.Drawing.Color.Transparent;
 			this.lblAforo.Location = new System.Drawing.Point(140, 23);
 			this.lblAforo.Name = "lblAforo";
 			this.lblAforo.Size = new System.Drawing.Size(100, 23);
@@ -79,6 +84,7 @@ namespace Hotel
 			// 
 			// lblPrecio
 			// 
+			this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
 			this.lblPrecio.Location = new System.Drawing.Point(140, 46);
 			this.lblPrecio.Name = "lblPrecio";
 			this.lblPrecio.Size = new System.Drawing.Size(100, 23);
@@ -96,6 +102,7 @@ namespace Hotel
 			// 
 			// lblPrecioPorExtra
 			// 
+			this.lblPrecioPorExtra.BackColor = System.Drawing.Color.Transparent;
 			this.lblPrecioPorExtra.Location = new System.Drawing.Point(140, 69);
 			this.lblPrecioPorExtra.Name = "lblPrecioPorExtra";
 			this.lblPrecioPorExtra.Size = new System.Drawing.Size(143, 22);
@@ -106,6 +113,7 @@ namespace Hotel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(295, 261);
 			this.Controls.Add(this.lblPrecioPorExtra);
 			this.Controls.Add(this.lvExtras);

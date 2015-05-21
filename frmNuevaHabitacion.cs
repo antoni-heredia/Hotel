@@ -39,28 +39,35 @@ namespace Hotel
 			XmlNode nodo;
 			nodo=doc.DocumentElement.SelectSingleNode("/hotel/habitaciones");
 			int iContador=1;
-			XmlNode UltimoNodo;
-			UltimoNodo=nodo.LastChild;
-			XmlAttributeCollection atrsUltimo ;
-			atrsUltimo=UltimoNodo.Attributes;
-			string UltimoNumero=atrsUltimo["Numero"].Value;
-			foreach ( XmlNode habitacion in nodo) {
-				XmlAttributeCollection atrs ;
-				atrs=habitacion.Attributes;
-				string strNumero=atrs["Numero"].Value;
-				int iNumero=int.Parse(strNumero);
-				if( iNumero !=  iContador){
-					lblHabitacion.Text=iContador.ToString();
-					break;
+			bool  control=true;
+			if( nodo.InnerXml == ""){	
+					lblHabitacion.Text="1";
+					control = false;
 				}
-				if( strNumero == UltimoNumero){
+			if (control){
+				XmlNode UltimoNodo;
+				UltimoNodo=nodo.LastChild;
+				XmlAttributeCollection atrsUltimo ;
+				atrsUltimo=UltimoNodo.Attributes;
+				string UltimoNumero=atrsUltimo["Numero"].Value;
+				foreach ( XmlNode habitacion in nodo) {
+		
+					XmlAttributeCollection atrs ;
+					atrs=habitacion.Attributes;
+					string strNumero=atrs["Numero"].Value;
+					int iNumero=int.Parse(strNumero);
+					if( iNumero !=  iContador){
+						lblHabitacion.Text=iContador.ToString();
+						break;
+					}
+					if( strNumero == UltimoNumero){
+						iContador++;
+						lblHabitacion.Text=iContador.ToString();
+						break;
+					}
 					iContador++;
-					lblHabitacion.Text=iContador.ToString();
-					break;
 				}
-				iContador++;
 			}
-			
 
 			
 			
@@ -93,28 +100,35 @@ namespace Hotel
 				doc.Load(this.Tag.ToString());
 				XmlNode nodo;
 				nodo=doc.DocumentElement.SelectSingleNode("/hotel/habitaciones");
-				XmlAttributeCollection atrs ;
-				atrs=nodo.LastChild.Attributes;
-				string strUltimoNumero=atrs["Numero"].Value;
-				if ( strUltimoNumero == strNumero){
-					MessageBox.Show("Esa habitacion ya existe, sal de esta venta " +
-					                "y vuelve a entrar para que se actualice el numero de habitacion.");
+				//XmlAttributeCollection atrs ;
+			//	atrs=nodo.LastChild.Attributes;
+			//	string strUltimoNumero=atrs["Numero"].Value;
+			
+				XmlElement habitacion = doc.CreateElement("habitacion");
+				XmlAttribute atributo;
+				atributo=doc.CreateAttribute("Numero");
+				atributo.Value=strNumero;
+				habitacion.SetAttributeNode(atributo);
+				atributo=doc.CreateAttribute("ocupada");
+				atributo.Value="No";
+				habitacion.SetAttributeNode(atributo);
+				habitacion.InnerXml=sXML;
+				habitacion["planta"].InnerText= strPlanta;
+				habitacion["NumeroCamas"].InnerText=strCamas;
+				habitacion["Aforo"].InnerText=strAforo;
+				habitacion["Precio"].InnerText=strPrecio;
+				habitacion["PrecioPorExtra"].InnerText=txtPrecioPorExtra.Text;;
+				habitacion["Extras"].InnerXml=sXML2;
+
+				if (!nodo.HasChildNodes){
+						doc.SelectSingleNode("/hotel/habitaciones").AppendChild(habitacion);
+						XmlTextWriter escriba = new XmlTextWriter(this.Tag.ToString(), null);
+						escriba.Formatting = Formatting.Indented;
+						doc.Save(escriba);
+						escriba.Close();
+						MessageBox.Show("Se ha modificado correctamente");
+						this.Close();
 				}else{
-					XmlElement habitacion = doc.CreateElement("habitacion");
-					XmlAttribute atributo;
-					atributo=doc.CreateAttribute("Numero");
-					atributo.Value=strNumero;
-					habitacion.SetAttributeNode(atributo);
-					atributo=doc.CreateAttribute("ocupada");
-					atributo.Value="No";
-					habitacion.SetAttributeNode(atributo);
-					habitacion.InnerXml=sXML;
-					habitacion["planta"].InnerText= strPlanta;
-					habitacion["NumeroCamas"].InnerText=strCamas;
-					habitacion["Aforo"].InnerText=strAforo;
-					habitacion["Precio"].InnerText=strPrecio;
-					habitacion["PrecioPorExtra"].InnerText=txtPrecioPorExtra.Text;;
-					habitacion["Extras"].InnerXml=sXML2;
 					foreach (XmlNode habitacion2 in nodo) {
 						XmlAttributeCollection atrs2 ;
 						atrs2=habitacion2.Attributes;
@@ -122,24 +136,25 @@ namespace Hotel
 						int iNumero2=int.Parse(strNumero2);
 						int iNumero=int.Parse(strNumero);
 						if( iNumero == 1){
-							doc.SelectSingleNode("/hotel/habitaciones").InsertBefore(habitacion,nodo.FirstChild);
+							doc.SelectSingleNode("/hotel/habitaciones").InsertBefore(
+								habitacion,nodo.FirstChild);
 							break;
 						}
 						if( iNumero2+1 ==  iNumero){
-							doc.SelectSingleNode("/hotel/habitaciones").InsertAfter(habitacion,habitacion2);
+							doc.SelectSingleNode("/hotel/habitaciones").InsertAfter(
+								habitacion,habitacion2);
 							break;
 						}
 					}
+
 					XmlTextWriter escriba = new XmlTextWriter(this.Tag.ToString(), null);
 					escriba.Formatting = Formatting.Indented;
 					doc.Save(escriba);
 					escriba.Close();
 					MessageBox.Show("Se ha modificado correctamente");
+					this.Close();
 				}
-				
 			}
-			
-			
 		}
 		
 	}

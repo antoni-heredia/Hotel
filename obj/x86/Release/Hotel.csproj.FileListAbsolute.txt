@@ -13,3 +13,5 @@ D:\Hotel\Hotel\Hotel\obj\x86\Release\Hotel.MainForm.resources
 D:\Hotel\Hotel\Hotel\obj\x86\Release\Hotel.csproj.GenerateResource.Cache
 D:\Hotel\Hotel\Hotel\obj\x86\Release\Hotel.exe
 D:\Hotel\Hotel\Hotel\obj\x86\Release\Hotel.csprojResolveAssemblyReference.cache
+D:\Hotel\Hotel\Hotel\obj\x86\Release\Hotel.frmModificarCliente.resources
+D:\Hotel\Hotel\Hotel\obj\x86\Release\Hotel.frmClientesDatos.resources

@@ -42,5 +42,6 @@ namespace Hotel
 			EliminarHabitacion.Tag=this.Tag;
 			EliminarHabitacion.Show();
 		}
+		
 	}
 }

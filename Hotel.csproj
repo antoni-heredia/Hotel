@@ -57,6 +57,10 @@
     <Compile Include="frmAñadir.Designer.cs">
       <DependentUpon>frmAñadir.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClientesDatos.cs" />
+    <Compile Include="frmClientesDatos.Designer.cs">
+      <DependentUpon>frmClientesDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDatos.cs" />
     <Compile Include="frmDatos.Designer.cs">
       <DependentUpon>frmDatos.cs</DependentUpon>
@@ -68,6 +72,10 @@
     <Compile Include="frmHabitaciones.cs" />
     <Compile Include="frmHabitaciones.Designer.cs">
       <DependentUpon>frmHabitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarCliente.cs" />
+    <Compile Include="frmModificarCliente.Designer.cs">
+      <DependentUpon>frmModificarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNuevaHabitacion.cs" />
     <Compile Include="frmNuevaHabitacion.Designer.cs">
@@ -94,6 +102,9 @@
     <EmbeddedResource Include="frmAñadir.resx">
       <DependentUpon>frmAñadir.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmClientesDatos.resx">
+      <DependentUpon>frmClientesDatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDatos.resx">
       <DependentUpon>frmDatos.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHabitaciones.resx">
       <DependentUpon>frmHabitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarCliente.resx">
+      <DependentUpon>frmModificarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuevaHabitacion.resx">
       <DependentUpon>frmNuevaHabitacion.cs</DependentUpon>

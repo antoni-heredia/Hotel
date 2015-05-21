@@ -36,6 +36,7 @@ namespace Hotel
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAñadir));
 			this.lbDni = new System.Windows.Forms.Label();
 			this.txtDni = new System.Windows.Forms.TextBox();
 			this.lblNombre = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@ namespace Hotel
 			// 
 			// lbDni
 			// 
+			this.lbDni.BackColor = System.Drawing.Color.Transparent;
 			this.lbDni.Location = new System.Drawing.Point(12, 44);
 			this.lbDni.Name = "lbDni";
 			this.lbDni.Size = new System.Drawing.Size(61, 17);
@@ -59,13 +61,14 @@ namespace Hotel
 			// 
 			// txtDni
 			// 
-			this.txtDni.Location = new System.Drawing.Point(80, 41);
+			this.txtDni.Location = new System.Drawing.Point(118, 41);
 			this.txtDni.Name = "txtDni";
 			this.txtDni.Size = new System.Drawing.Size(133, 20);
 			this.txtDni.TabIndex = 1;
 			// 
 			// lblNombre
 			// 
+			this.lblNombre.BackColor = System.Drawing.Color.Transparent;
 			this.lblNombre.Location = new System.Drawing.Point(13, 71);
 			this.lblNombre.Name = "lblNombre";
 			this.lblNombre.Size = new System.Drawing.Size(61, 17);
@@ -74,6 +77,7 @@ namespace Hotel
 			// 
 			// lblApellido
 			// 
+			this.lblApellido.BackColor = System.Drawing.Color.Transparent;
 			this.lblApellido.Location = new System.Drawing.Point(12, 98);
 			this.lblApellido.Name = "lblApellido";
 			this.lblApellido.Size = new System.Drawing.Size(100, 17);
@@ -82,20 +86,21 @@ namespace Hotel
 			// 
 			// txtNombre
 			// 
-			this.txtNombre.Location = new System.Drawing.Point(80, 68);
+			this.txtNombre.Location = new System.Drawing.Point(118, 68);
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.Size = new System.Drawing.Size(133, 20);
 			this.txtNombre.TabIndex = 5;
 			// 
 			// txtApellido
 			// 
-			this.txtApellido.Location = new System.Drawing.Point(80, 95);
+			this.txtApellido.Location = new System.Drawing.Point(118, 95);
 			this.txtApellido.Name = "txtApellido";
 			this.txtApellido.Size = new System.Drawing.Size(133, 20);
 			this.txtApellido.TabIndex = 6;
 			// 
 			// lblHabitacion
 			// 
+			this.lblHabitacion.BackColor = System.Drawing.Color.Transparent;
 			this.lblHabitacion.Location = new System.Drawing.Point(13, 24);
 			this.lblHabitacion.Name = "lblHabitacion";
 			this.lblHabitacion.Size = new System.Drawing.Size(100, 14);
@@ -104,15 +109,17 @@ namespace Hotel
 			// 
 			// lblNum
 			// 
-			this.lblNum.Location = new System.Drawing.Point(80, 24);
+			this.lblNum.BackColor = System.Drawing.Color.Transparent;
+			this.lblNum.Location = new System.Drawing.Point(118, 24);
 			this.lblNum.Name = "lblNum";
 			this.lblNum.Size = new System.Drawing.Size(100, 13);
 			this.lblNum.TabIndex = 8;
-			this.lblNum.Text = "label1";
+			this.lblNum.Click += new System.EventHandler(this.LblNumClick);
 			// 
 			// btnGuardar
 			// 
-			this.btnGuardar.Location = new System.Drawing.Point(80, 160);
+			this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
+			this.btnGuardar.Location = new System.Drawing.Point(138, 159);
 			this.btnGuardar.Name = "btnGuardar";
 			this.btnGuardar.Size = new System.Drawing.Size(80, 69);
 			this.btnGuardar.TabIndex = 9;
@@ -123,24 +130,26 @@ namespace Hotel
 			// dateTimePicker1
 			// 
 			this.dateTimePicker1.CustomFormat = "dd MM yyyy";
-			this.dateTimePicker1.Location = new System.Drawing.Point(13, 121);
+			this.dateTimePicker1.Location = new System.Drawing.Point(119, 118);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
 			this.dateTimePicker1.TabIndex = 10;
 			// 
 			// label1
 			// 
-			this.label1.Location = new System.Drawing.Point(245, 15);
+			this.label1.BackColor = System.Drawing.Color.Transparent;
+			this.label1.Location = new System.Drawing.Point(13, 124);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(578, 408);
+			this.label1.Size = new System.Drawing.Size(79, 14);
 			this.label1.TabIndex = 11;
-			this.label1.Text = "label1";
+			this.label1.Text = "Fecha Entrada";
 			// 
 			// frmAñadir
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(846, 442);
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.ClientSize = new System.Drawing.Size(354, 251);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.dateTimePicker1);
 			this.Controls.Add(this.btnGuardar);

@@ -75,6 +75,7 @@ namespace Hotel
 				doc.Save(escriba);
 				escriba.Close();
 				MessageBox.Show("Se ha modificado correctamente");
+				this.Close();
 				
 		}
 		void FrmAñadirLoad(object sender, EventArgs e)
@@ -86,6 +87,10 @@ namespace Hotel
 			string[] word = text.Split(caracterlimitador);
 			doc.Load(word[1]);	
 			lblNum.Text=word[0];
+		}
+		void LblNumClick(object sender, EventArgs e)
+		{
+	
 		}
 		
 	}

@@ -36,6 +36,7 @@ namespace Hotel
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHabitaciones));
 			this.lvHabitaciones = new System.Windows.Forms.ListView();
 			this.btnDatos = new System.Windows.Forms.Button();
 			this.lblAñadir = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@ namespace Hotel
 			// 
 			// btnDatos
 			// 
+			this.btnDatos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDatos.BackgroundImage")));
 			this.btnDatos.Location = new System.Drawing.Point(278, 18);
 			this.btnDatos.Name = "btnDatos";
 			this.btnDatos.Size = new System.Drawing.Size(80, 69);
@@ -63,6 +65,7 @@ namespace Hotel
 			// 
 			// lblAñadir
 			// 
+			this.lblAñadir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lblAñadir.BackgroundImage")));
 			this.lblAñadir.Location = new System.Drawing.Point(278, 93);
 			this.lblAñadir.Name = "lblAñadir";
 			this.lblAñadir.Size = new System.Drawing.Size(80, 69);
@@ -73,6 +76,7 @@ namespace Hotel
 			// 
 			// lblSalida
 			// 
+			this.lblSalida.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lblSalida.BackgroundImage")));
 			this.lblSalida.Location = new System.Drawing.Point(278, 168);
 			this.lblSalida.Name = "lblSalida";
 			this.lblSalida.Size = new System.Drawing.Size(80, 69);
@@ -85,6 +89,7 @@ namespace Hotel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(374, 261);
 			this.Controls.Add(this.lblSalida);
 			this.Controls.Add(this.lblAñadir);
@@ -94,6 +99,7 @@ namespace Hotel
 			this.Text = "Habitaciones";
 			this.Load += new System.EventHandler(this.FrmHabitacionesLoad);
 			this.ResumeLayout(false);
+
 		}
 		private System.Windows.Forms.Button lblSalida;
 		private System.Windows.Forms.Button lblAñadir;

@@ -36,6 +36,7 @@ namespace Hotel
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevaHabitacion));
 			this.lblNumero = new System.Windows.Forms.Label();
 			this.lblPlanta = new System.Windows.Forms.Label();
 			this.txtPlanta = new System.Windows.Forms.TextBox();
@@ -55,17 +56,19 @@ namespace Hotel
 			// 
 			// lblNumero
 			// 
+			this.lblNumero.BackColor = System.Drawing.Color.Transparent;
 			this.lblNumero.Location = new System.Drawing.Point(12, 9);
 			this.lblNumero.Name = "lblNumero";
-			this.lblNumero.Size = new System.Drawing.Size(114, 13);
+			this.lblNumero.Size = new System.Drawing.Size(123, 13);
 			this.lblNumero.TabIndex = 0;
 			this.lblNumero.Text = "Numero de Habitación:";
 			// 
 			// lblPlanta
 			// 
+			this.lblPlanta.BackColor = System.Drawing.Color.Transparent;
 			this.lblPlanta.Location = new System.Drawing.Point(13, 28);
 			this.lblPlanta.Name = "lblPlanta";
-			this.lblPlanta.Size = new System.Drawing.Size(113, 17);
+			this.lblPlanta.Size = new System.Drawing.Size(42, 17);
 			this.lblPlanta.TabIndex = 1;
 			this.lblPlanta.Text = "Planta:";
 			// 
@@ -78,9 +81,10 @@ namespace Hotel
 			// 
 			// lblCamas
 			// 
+			this.lblCamas.BackColor = System.Drawing.Color.Transparent;
 			this.lblCamas.Location = new System.Drawing.Point(12, 51);
 			this.lblCamas.Name = "lblCamas";
-			this.lblCamas.Size = new System.Drawing.Size(114, 17);
+			this.lblCamas.Size = new System.Drawing.Size(101, 17);
 			this.lblCamas.TabIndex = 3;
 			this.lblCamas.Text = "Numero de camas: ";
 			// 
@@ -100,9 +104,10 @@ namespace Hotel
 			// 
 			// lblAforo
 			// 
+			this.lblAforo.BackColor = System.Drawing.Color.Transparent;
 			this.lblAforo.Location = new System.Drawing.Point(13, 74);
 			this.lblAforo.Name = "lblAforo";
-			this.lblAforo.Size = new System.Drawing.Size(113, 17);
+			this.lblAforo.Size = new System.Drawing.Size(42, 13);
 			this.lblAforo.TabIndex = 6;
 			this.lblAforo.Text = "Aforo:";
 			// 
@@ -129,6 +134,7 @@ namespace Hotel
 			// 
 			// lblExtras
 			// 
+			this.lblExtras.BackColor = System.Drawing.Color.Transparent;
 			this.lblExtras.Location = new System.Drawing.Point(270, 6);
 			this.lblExtras.Name = "lblExtras";
 			this.lblExtras.Size = new System.Drawing.Size(100, 16);
@@ -137,6 +143,7 @@ namespace Hotel
 			// 
 			// btnGuardar
 			// 
+			this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
 			this.btnGuardar.Location = new System.Drawing.Point(96, 140);
 			this.btnGuardar.Name = "btnGuardar";
 			this.btnGuardar.Size = new System.Drawing.Size(80, 69);
@@ -147,6 +154,7 @@ namespace Hotel
 			// 
 			// lblHabitacion
 			// 
+			this.lblHabitacion.BackColor = System.Drawing.Color.Transparent;
 			this.lblHabitacion.Location = new System.Drawing.Point(132, 9);
 			this.lblHabitacion.Name = "lblHabitacion";
 			this.lblHabitacion.Size = new System.Drawing.Size(100, 13);
@@ -154,9 +162,10 @@ namespace Hotel
 			// 
 			// lblPrecio
 			// 
+			this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
 			this.lblPrecio.Location = new System.Drawing.Point(13, 95);
 			this.lblPrecio.Name = "lblPrecio";
-			this.lblPrecio.Size = new System.Drawing.Size(100, 20);
+			this.lblPrecio.Size = new System.Drawing.Size(42, 17);
 			this.lblPrecio.TabIndex = 11;
 			this.lblPrecio.Text = "Precio: ";
 			// 
@@ -169,9 +178,10 @@ namespace Hotel
 			// 
 			// label1
 			// 
+			this.label1.BackColor = System.Drawing.Color.Transparent;
 			this.label1.Location = new System.Drawing.Point(13, 119);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 18);
+			this.label1.Size = new System.Drawing.Size(100, 15);
 			this.label1.TabIndex = 13;
 			this.label1.Text = "Precio por Extra:";
 			// 
@@ -186,6 +196,7 @@ namespace Hotel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(504, 221);
 			this.Controls.Add(this.txtPrecioPorExtra);
 			this.Controls.Add(this.label1);

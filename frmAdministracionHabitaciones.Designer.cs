@@ -36,13 +36,15 @@ namespace Hotel
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdministracionHabitaciones));
 			this.btnAñadir = new System.Windows.Forms.Button();
 			this.lblEliminar = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnAñadir
 			// 
-			this.btnAñadir.Location = new System.Drawing.Point(72, 12);
+			this.btnAñadir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAñadir.BackgroundImage")));
+			this.btnAñadir.Location = new System.Drawing.Point(78, 20);
 			this.btnAñadir.Name = "btnAñadir";
 			this.btnAñadir.Size = new System.Drawing.Size(80, 69);
 			this.btnAñadir.TabIndex = 0;
@@ -52,7 +54,8 @@ namespace Hotel
 			// 
 			// lblEliminar
 			// 
-			this.lblEliminar.Location = new System.Drawing.Point(236, 12);
+			this.lblEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lblEliminar.BackgroundImage")));
+			this.lblEliminar.Location = new System.Drawing.Point(247, 20);
 			this.lblEliminar.Name = "lblEliminar";
 			this.lblEliminar.Size = new System.Drawing.Size(80, 69);
 			this.lblEliminar.TabIndex = 1;
@@ -64,12 +67,14 @@ namespace Hotel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(378, 93);
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+			this.ClientSize = new System.Drawing.Size(384, 101);
 			this.Controls.Add(this.lblEliminar);
 			this.Controls.Add(this.btnAñadir);
 			this.Name = "frmAdministracionHabitaciones";
 			this.Text = "Administracion de Habitaciones";
 			this.ResumeLayout(false);
+
 		}
 		private System.Windows.Forms.Button lblEliminar;
 		private System.Windows.Forms.Button btnAñadir;

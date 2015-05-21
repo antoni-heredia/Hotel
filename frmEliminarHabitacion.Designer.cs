@@ -38,6 +38,7 @@ namespace Hotel
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEliminarHabitacion));
 			this.listView1 = new System.Windows.Forms.ListView();
 			this.lblEliminar = new System.Windows.Forms.Button();
 			this.SuspendLayout();
@@ -53,6 +54,7 @@ namespace Hotel
 			// 
 			// lblEliminar
 			// 
+			this.lblEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lblEliminar.BackgroundImage")));
 			this.lblEliminar.Location = new System.Drawing.Point(312, 94);
 			this.lblEliminar.Name = "lblEliminar";
 			this.lblEliminar.Size = new System.Drawing.Size(80, 69);
@@ -65,6 +67,7 @@ namespace Hotel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.ClientSize = new System.Drawing.Size(404, 261);
 			this.Controls.Add(this.lblEliminar);
 			this.Controls.Add(this.listView1);

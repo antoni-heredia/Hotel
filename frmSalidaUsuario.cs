@@ -83,11 +83,8 @@ namespace Hotel
 			TimeSpan ts = dtpSalida.Value - dtpEntrada.Value;
 			int differenceInDays = ts.Days;
 			float fltPrecioHabitacion= float.Parse(lblPrecioHabitacion.Text);
-			MessageBox.Show(fltPrecioHabitacion.ToString());
 			float fltPrecioExtra = float.Parse(lblPrecioExtra.Text);
-			MessageBox.Show(fltPrecioExtra.ToString());
 			float fltTotal = differenceInDays*fltPrecioHabitacion+fltPrecioExtra*lvExtras.Items.Count;
-			MessageBox.Show(fltTotal.ToString());
 			lblTotalAPagar.Text = fltTotal.ToString();
 		}
 		void BtnConfirmarClick(object sender, EventArgs e)
@@ -151,7 +148,7 @@ namespace Hotel
 						 
 						// Creamos una tabla que contendrá el nombre, apellido y país
 						// de nuestros visitante.
-						PdfPTable tblPrueba = new PdfPTable(3);
+						PdfPTable tblPrueba = new PdfPTable(6);
 						tblPrueba.WidthPercentage = 100;
 						 
 						// Configuramos el título de las columnas de la tabla
@@ -166,11 +163,27 @@ namespace Hotel
 						PdfPCell clDni = new PdfPCell(new Phrase("Dni", _standardFont));
 						clDni.BorderWidth = 0;
 						clDni.BorderWidthBottom = 0.75f;
+						
+						PdfPCell clNumeroHabitacion = new PdfPCell(new Phrase("Numero habitacion", _standardFont));
+						clNumeroHabitacion.BorderWidth = 0;
+						clNumeroHabitacion.BorderWidthBottom = 0.75f;
+						
+						PdfPCell clEntrada = new PdfPCell(new Phrase("Fecha de Entrada", _standardFont));
+						clEntrada.BorderWidth = 0;
+						clEntrada.BorderWidthBottom = 0.75f;
+						
+						PdfPCell clSalida = new PdfPCell(new Phrase("Fecha de Salida", _standardFont));
+						clSalida.BorderWidth = 0;
+						clSalida.BorderWidthBottom = 0.75f;
+						
 						 
 						// Añadimos las celdas a la tabla
 						tblPrueba.AddCell(clNombre);
 						tblPrueba.AddCell(clApellido);
 						tblPrueba.AddCell(clDni);
+						tblPrueba.AddCell(clNumeroHabitacion);
+						tblPrueba.AddCell(clEntrada);
+						tblPrueba.AddCell(clSalida);
 						 
 						// Llenamos la tabla con información
 						clNombre = new PdfPCell(new Phrase(Nombre.Text, _standardFont));
@@ -181,11 +194,23 @@ namespace Hotel
 						 
 						clDni = new PdfPCell(new Phrase(Dni.Text, _standardFont));
 						clDni.BorderWidth = 0;
+						
+						clNumeroHabitacion = new PdfPCell(new Phrase(NumeroHabitacion.Text, _standardFont));
+						clNumeroHabitacion.BorderWidth = 0;
+						
+						clEntrada = new PdfPCell(new Phrase(dtpEntrada.Value.ToString("dd/MM/yyyy"), _standardFont));
+						clEntrada.BorderWidth = 0;
+						
+						clSalida = new PdfPCell(new Phrase(dtpSalida.Value.ToString("dd/MM/yyyy"), _standardFont));
+						clSalida.BorderWidth = 0;
 						 
 						// Añadimos las celdas a la tabla
 						tblPrueba.AddCell(clNombre);
 						tblPrueba.AddCell(clApellido);
-						tblPrueba.AddCell(clDni);
+						tblPrueba.AddCell(clDni);						
+						tblPrueba.AddCell(clNumeroHabitacion);
+						tblPrueba.AddCell(clEntrada);
+						tblPrueba.AddCell(clSalida);
 						doc2.Add(tblPrueba);
 						//Ponemos los extras que habia en la habitacion
 						PdfPTable tblExtras = new PdfPTable(3);
@@ -235,11 +260,31 @@ namespace Hotel
 						doc2.Add(tblExtras);
 						doc2.Add(Chunk.NEWLINE);
 						doc2.Add(new Paragraph("Total a pagar: "+lblTotalAPagar.Text));
+						doc2.Add(Chunk.NEWLINE);
+						
+						PdfPTable tblFirma = new PdfPTable(2);
+						tblFirma.WidthPercentage = 100;
+						 
+						PdfPCell clFirma = new PdfPCell(new Phrase("Firma Usuario", _standardFont));
+						clFirma.BorderWidth = 0;
+
+						 
+						PdfPCell clSello = new PdfPCell(new Phrase("Sello de la empresa", _standardFont));
+						clSello.BorderWidth = 0;
+
+						
+						tblFirma.AddCell(clFirma);
+						tblFirma.AddCell(clSello);
+						doc2.Add(tblFirma);
+						
 						doc2.Close();
-						writer.Close();				
+						writer.Close();
+						this.Close();
 					}
 				}
 
 		}
+
+	
 	}
 }
